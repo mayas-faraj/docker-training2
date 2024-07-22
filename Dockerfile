@@ -1,12 +1,12 @@
-FROM node:18-alpine  # Use a lightweight Node.js base image
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package*.json ./  # Copy package.json and package-lock.json (if used)
-RUN npm install  # Install dependencies from package.json
+COPY package*.json ./
+RUN npm install
 
 COPY . .
 
 EXPOSE 5000
 
-CMD [ "node", "app.js" ]  # Start the Node.js application
+CMD [ "node", "app.js" ]
